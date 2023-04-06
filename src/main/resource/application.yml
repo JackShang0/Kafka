@@ -1,0 +1,42 @@
+server:
+  port: 6666
+spring:
+  application:
+    name: kafka
+  resources:
+    add-mappings: false
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource    #当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver   #此处不对哈  mysql驱动包
+    url: jdbc:mysql://localhost:3306/db2022?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    #url: jdbc:mysql://wz9e56j73waav0n3k7o.mysql.rds.aliyuncs.com:3306/db2023?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    #username: user2023
+    #password: user2023
+
+  #main:
+  #  allow-bean-definition-overriding: true
+  #datasource:
+  #  first:
+  #    url: jdbc:oracle:thin:@//192.168.55.233:1521/histjfdb
+  #    username: DM
+  #    password: Dmtejfxt
+  #    driver-class-name: oracle.jdbc.driver.OracleDriver
+  #  second:
+  #    #type: com.alibaba.druid.pool.DruidDataSource
+  #    driver-class-name: com.mysql.jdbc.Driver
+  #    url: jdbc:mysql://137.0.16.175:8066/hk_unicom_nmcc?useUnicode=true&characterEncoding=utf-8
+  #    username: nmcc
+  #    password: Nmcc!Q2w
+
+logging:
+  level:
+    root: info
+    com.sitech.ijcf: error
+    com.sitech.ip.analysis.mapper: trace
+
+
+#mybatis:
+#  type-aliases-package: com.sitech.prtg.bean       # 所有实体类所在包路径
+#  mapper-locations: classpath:mapper/**/*.xml      # mapper映射文件
