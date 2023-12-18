@@ -18,7 +18,8 @@ import java.util.concurrent.ExecutionException;
  */
 public class MySimpleProducer {
 
-    private final static String TOPIC_NAME = "my-replicated-topic";
+    //private final static String TOPIC_NAME = "my-replicated-topic";
+    private final static String TOPIC_NAME_TEST = "test";
 
 
 
@@ -30,6 +31,8 @@ public class MySimpleProducer {
         //此处需要修改kafka的配置ip为公网ip     内网地址 172.30.40.136  公网地址 119.23.70.8
         properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,"119.23.70.8:9092");
         //把发送的key从在字符串序列化为字节数组
+        //properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,"org.apache.kafka.common.serialization.StringSerializer");
+        //上下等价
         properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,StringSerializer.class.getName());
         //把发送的value从字符串序列化为字节数组
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
@@ -42,7 +45,7 @@ public class MySimpleProducer {
         //3、创建消息
         //未指定发送分区，具体发送的分区计算公式：hash(key)%partitionNum (key的哈希值 取余 分区数)
         //key 决定分区，value 是具体发送的值
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<>(TOPIC_NAME,
+        ProducerRecord<String, String> producerRecord = new ProducerRecord<>(TOPIC_NAME_TEST,
                 "kafkaKey", "hello,kafka");
 
         //4、发送消息  得到消息发送的元数据
@@ -108,7 +111,7 @@ public class MySimpleProducer {
             //3、创建消息
             //未指定发送分区，具体发送的分区计算公式：hash(key)%partitionNum (key的哈希值 取余 分区数)
             //key 决定分区，value 是具体发送的值
-            ProducerRecord<String, String> producerRecord = new ProducerRecord<>(TOPIC_NAME,
+            ProducerRecord<String, String> producerRecord = new ProducerRecord<>(TOPIC_NAME_TEST,
                     "kafkaKey", "hello,kafka");
 
             //4、发送消息  得到消息发送的元数据
