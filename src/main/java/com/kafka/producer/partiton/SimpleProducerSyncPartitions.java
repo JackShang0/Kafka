@@ -32,11 +32,14 @@ public class SimpleProducerSyncPartitions {
 
         //发送消息并获取应答的信息  同步发送与异步发送的区别在于 同步发送多了一个get方法
         //指定分区进行发送消息
-        /*producer.send(new ProducerRecord<>("test",1,"","hello kafka partition"), (recordMetadata, e) -> {
-            if (e == null) {
-                System.out.println(recordMetadata.topic() + "\t" + recordMetadata.offset() + "\t" + recordMetadata.partition());
-            }
-        }).get();*/
+        /*for (int i = 0; i < 50; i++) {
+            producer.send(new ProducerRecord<>("test",0,"","hello kafka partition  " + i), (recordMetadata, e) -> {
+                if (e == null) {
+                    System.out.println(recordMetadata.topic() + "\t" + recordMetadata.offset() + "\t" + recordMetadata.partition());
+                }
+            }).get();
+        }*/
+
 
         //不指定分区，指定key
         /*producer.send(new ProducerRecord<>("test","key1","hello kafka partition key"), (recordMetadata, e) -> {

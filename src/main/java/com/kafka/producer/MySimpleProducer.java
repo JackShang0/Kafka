@@ -5,7 +5,7 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.apache.kafka.common.serialization.StringSerializer;
-import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
@@ -72,7 +72,7 @@ public class MySimpleProducer {
 
 
 
-    @PostMapping("/producer")
+    //@PostMapping("/producer")
     public String producer()  {
 
         String result = "Success";
@@ -88,7 +88,7 @@ public class MySimpleProducer {
         return result;
     }
 
-    @PostMapping("/producer")
+    //@PostMapping("/producer")
     public String producer2()  {
 
         String result = "Success";

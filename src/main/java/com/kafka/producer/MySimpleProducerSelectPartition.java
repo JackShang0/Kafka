@@ -5,7 +5,7 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.apache.kafka.common.serialization.StringSerializer;
-import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
@@ -70,7 +70,7 @@ public class MySimpleProducerSelectPartition {
 
 
 
-    @PostMapping("/producer")
+    //@PostMapping("/producer")
     public String producer()  {
 
         String result = "Success";
@@ -86,7 +86,7 @@ public class MySimpleProducerSelectPartition {
         return result;
     }
 
-    @PostMapping("/producer")
+    //@PostMapping("/producer")
     public String producer2()  {
 
         String result = "Success";
@@ -128,10 +128,5 @@ public class MySimpleProducerSelectPartition {
         }
         return result;
     }
-    /**
-     * 1、具体问一下，出差这个大概需要持续多久，客户有没有对这块有要求
-     * 2、我记得上次您在电话中讲，会后续招一个业务人员，除了业务人员还会招开发进来吗？
-     * 3、来公司一年半了，没有项目奖金
-     * 4、涨薪不了解具体的沟通方式是怎么样的
-     */
+
 }
