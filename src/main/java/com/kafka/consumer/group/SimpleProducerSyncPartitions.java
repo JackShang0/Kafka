@@ -20,7 +20,7 @@ public class SimpleProducerSyncPartitions {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         //kafka配置
         Properties properties = new Properties();
-        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,"119.23.70.8:9092");
+        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,"10.120.52.34:9092");
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
